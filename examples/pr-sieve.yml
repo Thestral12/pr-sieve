@@ -16,8 +16,8 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      # Pin to a commit SHA from https://github.com/Thestral12/pr-sieve (not a floating tag).
-      - uses: Thestral12/pr-sieve@PIN_SHA_AFTER_PUSH
+      # Pin to a commit SHA (not a floating tag).
+      - uses: Thestral12/pr-sieve@ea8e3559e7407534f4296cf5a83f79d8964784bd
         with:
           typesafe-api-key: ${{ secrets.TYPESAFE_API_KEY }}
           config: .jev.yml

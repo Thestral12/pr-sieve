@@ -26,7 +26,7 @@ steps:
     with:
       fetch-depth: 0
       persist-credentials: false
-  - uses: Thestral12/pr-sieve@<pinned-sha>
+  - uses: Thestral12/pr-sieve@ea8e3559e7407534f4296cf5a83f79d8964784bd
     with:
       typesafe-api-key: ${{ secrets.TYPESAFE_API_KEY }}
 ```
