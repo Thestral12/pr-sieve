@@ -1,0 +1,31 @@
+{
+  "id": "changelog-missing-api",
+  "gold": true,
+  "layer": "jev",
+  "dossier": {
+    "surface": "pr",
+    "title": "feat: public listUsers endpoint",
+    "body": "Adds GET /v1/users.",
+    "author_association": "MEMBER",
+    "files": [
+      { "path": "src/api/users.ts", "status": "A", "additions": 30, "deletions": 0 },
+      { "path": "src/api/users.test.ts", "status": "A", "additions": 15, "deletions": 0 }
+    ],
+    "path_tags": ["tests"],
+    "preflight": {
+      "secret_regex_hits": [],
+      "has_test_file_change": true,
+      "has_changelog_change": false,
+      "file_count": 2,
+      "truncated": false
+    },
+    "diff": "diff --git a/src/api/users.ts b/src/api/users.ts\n+export function listUsers() { return []; }\n"
+  },
+  "answers": {
+    "looks_like_secret": { "type": "noul", "noul": 0.01 },
+    "missing_tests": { "type": "noul", "noul": 0.12 },
+    "changelog": { "type": "noul", "noul": 0.88 },
+    "change_kind": { "type": "choice", "choice": "feature", "confidence": 0.82 }
+  },
+  "expected": { "fails": false, "finding_ids": ["changelog"] }
+}

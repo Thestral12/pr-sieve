@@ -1,0 +1,32 @@
+{
+  "id": "auth-middleware",
+  "gold": true,
+  "layer": "jev",
+  "dossier": {
+    "surface": "pr",
+    "title": "fix: session cookie flags",
+    "body": "Set HttpOnly on the session cookie.",
+    "author_association": "MEMBER",
+    "files": [
+      { "path": "src/middleware/session.ts", "status": "M", "additions": 8, "deletions": 2 },
+      { "path": "src/middleware/session.test.ts", "status": "M", "additions": 10, "deletions": 0 }
+    ],
+    "path_tags": ["auth", "tests", "touches_auth"],
+    "preflight": {
+      "secret_regex_hits": [],
+      "has_test_file_change": true,
+      "has_changelog_change": false,
+      "file_count": 2,
+      "truncated": false
+    },
+    "diff": "diff --git a/src/middleware/session.ts b/src/middleware/session.ts\n+cookie.httpOnly = true;\n"
+  },
+  "answers": {
+    "looks_like_secret": { "type": "noul", "noul": 0.02 },
+    "missing_tests": { "type": "noul", "noul": 0.10 },
+    "changelog": { "type": "noul", "noul": 0.20 },
+    "touches_auth": { "type": "noul", "noul": 0.91 },
+    "change_kind": { "type": "choice", "choice": "fix", "confidence": 0.80 }
+  },
+  "expected": { "fails": false, "finding_ids": ["touches_auth"] }
+}

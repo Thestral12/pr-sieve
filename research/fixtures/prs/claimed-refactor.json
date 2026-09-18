@@ -1,0 +1,30 @@
+{
+  "id": "claimed-refactor",
+  "gold": true,
+  "layer": "jev",
+  "policy_yaml": "version: 1\nrules:\n  - id: claimed_refactor\n    on: fail\n    threshold: 0.80\n    title_matches: \"(?i)refactor\"\n    ask: \"The title claims a refactor, but the diff changes an exported value, signature, or user-visible behavior. A new or changed exported literal is not a refactor.\"\n",
+  "dossier": {
+    "surface": "pr",
+    "title": "refactor: tidy billing",
+    "body": "Just moving files.",
+    "author_association": "MEMBER",
+    "files": [{ "path": "src/billing.ts", "status": "M", "additions": 15, "deletions": 4 }],
+    "path_tags": [],
+    "preflight": {
+      "secret_regex_hits": [],
+      "has_test_file_change": false,
+      "has_changelog_change": false,
+      "file_count": 1,
+      "truncated": false
+    },
+    "diff": "diff --git a/src/billing.ts b/src/billing.ts\n+export const price = 12;\n"
+  },
+  "answers": {
+    "looks_like_secret": { "type": "noul", "noul": 0.01 },
+    "missing_tests": { "type": "noul", "noul": 0.22 },
+    "changelog": { "type": "noul", "noul": 0.40 },
+    "claimed_refactor": { "type": "noul", "noul": 0.87 },
+    "change_kind": { "type": "choice", "choice": "feature", "confidence": 0.66 }
+  },
+  "expected": { "fails": true, "finding_ids": ["claimed_refactor"] }
+}

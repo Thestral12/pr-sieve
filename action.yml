@@ -1,0 +1,33 @@
+name: pr-sieve
+description: Semantic PR gate powered by TypeSafe Jev. Policy in .jev.yml. No review essays.
+author: pr-sieve
+inputs:
+  typesafe-api-key:
+    description: TypeSafe API key (repo secret). Empty on fork PRs is a skip, not an error.
+    required: true
+  config:
+    description: Path to .jev.yml (read from the base ref when possible)
+    required: false
+    default: .jev.yml
+  fail-on:
+    description: "gate | never | any-finding"
+    required: false
+    default: gate
+  comment:
+    description: "sticky | always | never"
+    required: false
+    default: sticky
+  model:
+    description: TypeSafe model id or alias
+    required: false
+    default: jev-latest
+  github-token:
+    description: Token for Check Runs and PR comments
+    required: false
+    default: ${{ github.token }}
+runs:
+  using: node20
+  main: dist/index.js
+branding:
+  icon: filter
+  color: purple

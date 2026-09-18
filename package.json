@@ -1,0 +1,48 @@
+{
+  "name": "pr-sieve",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "license": "MIT",
+  "description": "Semantic PR gate: .jev.yml rules as TypeSafe Jev questions. Not a review bot.",
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@11.22.0",
+  "main": "dist/index.js",
+  "bin": {
+    "sieve": "dist/cli/index.js"
+  },
+  "files": [
+    "dist",
+    "action.yml",
+    "examples",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "ncc build src/main.ts -o dist --license licenses.txt && ncc build src/cli.ts -o dist/cli --license licenses.txt",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "sieve": "tsx src/cli.ts",
+    "eval": "tsx src/cli.ts eval",
+    "doctor": "tsx src/cli.ts doctor"
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.1",
+    "@typesafe-ai/sdk": "^0.6.0",
+    "micromatch": "^4.0.8",
+    "yaml": "^2.8.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/micromatch": "^4.0.9",
+    "@types/node": "^24.5.2",
+    "@vercel/ncc": "^0.38.3",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}

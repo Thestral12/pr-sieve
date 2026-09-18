@@ -1,0 +1,36 @@
+{
+  "id": "lockfile-only",
+  "gold": true,
+  "layer": "rules",
+  "dossier": {
+    "surface": "pr",
+    "title": "chore: lockfile",
+    "body": "",
+    "author_association": "MEMBER",
+    "files": [
+      {
+        "path": "pnpm-lock.yaml",
+        "status": "M",
+        "additions": 400,
+        "deletions": 12,
+        "lockfile": true
+      }
+    ],
+    "path_tags": [],
+    "preflight": {
+      "secret_regex_hits": [],
+      "has_test_file_change": false,
+      "has_changelog_change": false,
+      "file_count": 1,
+      "truncated": false
+    },
+    "diff": ""
+  },
+  "answers": {
+    "looks_like_secret": { "type": "noul", "noul": 0.0 },
+    "missing_tests": { "type": "noul", "noul": 0.02 },
+    "changelog": { "type": "noul", "noul": 0.01 },
+    "change_kind": { "type": "choice", "choice": "chore", "confidence": 0.95 }
+  },
+  "expected": { "fails": false }
+}

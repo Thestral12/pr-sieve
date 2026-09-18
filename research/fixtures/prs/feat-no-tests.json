@@ -1,0 +1,28 @@
+{
+  "id": "feat-no-tests",
+  "gold": true,
+  "layer": "jev",
+  "dossier": {
+    "surface": "pr",
+    "title": "feat: add export button",
+    "body": "Users can export CSV.",
+    "author_association": "CONTRIBUTOR",
+    "files": [{ "path": "src/export.ts", "status": "A", "additions": 40, "deletions": 0 }],
+    "path_tags": [],
+    "preflight": {
+      "secret_regex_hits": [],
+      "has_test_file_change": false,
+      "has_changelog_change": false,
+      "file_count": 1,
+      "truncated": false
+    },
+    "diff": "diff --git a/src/export.ts b/src/export.ts\n+export function exportCsv() { return 'ok'; }\n"
+  },
+  "answers": {
+    "looks_like_secret": { "type": "noul", "noul": 0.01 },
+    "missing_tests": { "type": "noul", "noul": 0.92 },
+    "changelog": { "type": "noul", "noul": 0.40 },
+    "change_kind": { "type": "choice", "choice": "feature", "confidence": 0.84 }
+  },
+  "expected": { "fails": true, "finding_ids": ["missing_tests"] }
+}

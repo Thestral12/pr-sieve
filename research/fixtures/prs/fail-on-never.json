@@ -1,0 +1,29 @@
+{
+  "id": "fail-on-never",
+  "gold": true,
+  "layer": "jev",
+  "failOn": "never",
+  "dossier": {
+    "surface": "pr",
+    "title": "feat: no tests on purpose",
+    "body": "",
+    "author_association": "MEMBER",
+    "files": [{ "path": "src/new.ts", "status": "A", "additions": 12, "deletions": 0 }],
+    "path_tags": [],
+    "preflight": {
+      "secret_regex_hits": [],
+      "has_test_file_change": false,
+      "has_changelog_change": false,
+      "file_count": 1,
+      "truncated": false
+    },
+    "diff": "diff --git a/src/new.ts b/src/new.ts\n+export const n = 1;\n"
+  },
+  "answers": {
+    "looks_like_secret": { "type": "noul", "noul": 0.01 },
+    "missing_tests": { "type": "noul", "noul": 0.95 },
+    "changelog": { "type": "noul", "noul": 0.20 },
+    "change_kind": { "type": "choice", "choice": "feature", "confidence": 0.80 }
+  },
+  "expected": { "fails": false, "finding_ids": ["missing_tests"] }
+}

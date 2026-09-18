@@ -1,0 +1,28 @@
+{
+  "id": "chore-ci",
+  "gold": true,
+  "layer": "jev",
+  "dossier": {
+    "surface": "pr",
+    "title": "ci: cache pnpm",
+    "body": "",
+    "author_association": "MEMBER",
+    "files": [{ "path": ".github/workflows/ci.yml", "status": "M", "additions": 6, "deletions": 1 }],
+    "path_tags": ["ci"],
+    "preflight": {
+      "secret_regex_hits": [],
+      "has_test_file_change": false,
+      "has_changelog_change": false,
+      "file_count": 1,
+      "truncated": false
+    },
+    "diff": "diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml\n+cache: pnpm\n"
+  },
+  "answers": {
+    "looks_like_secret": { "type": "noul", "noul": 0.01 },
+    "missing_tests": { "type": "noul", "noul": 0.04 },
+    "changelog": { "type": "noul", "noul": 0.02 },
+    "change_kind": { "type": "choice", "choice": "chore", "confidence": 0.93 }
+  },
+  "expected": { "fails": false }
+}

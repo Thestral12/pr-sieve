@@ -1,0 +1,32 @@
+{
+  "id": "changelog-present",
+  "gold": true,
+  "layer": "jev",
+  "dossier": {
+    "surface": "pr",
+    "title": "feat: listUsers",
+    "body": "",
+    "author_association": "MEMBER",
+    "files": [
+      { "path": "src/api/users.ts", "status": "A", "additions": 20, "deletions": 0 },
+      { "path": "src/api/users.test.ts", "status": "A", "additions": 12, "deletions": 0 },
+      { "path": "CHANGELOG.md", "status": "M", "additions": 4, "deletions": 0 }
+    ],
+    "path_tags": ["tests", "changelog", "docs"],
+    "preflight": {
+      "secret_regex_hits": [],
+      "has_test_file_change": true,
+      "has_changelog_change": true,
+      "file_count": 3,
+      "truncated": false
+    },
+    "diff": "diff --git a/CHANGELOG.md b/CHANGELOG.md\n+## Unreleased\n+- listUsers endpoint\n"
+  },
+  "answers": {
+    "looks_like_secret": { "type": "noul", "noul": 0.01 },
+    "missing_tests": { "type": "noul", "noul": 0.09 },
+    "changelog": { "type": "noul", "noul": 0.05 },
+    "change_kind": { "type": "choice", "choice": "feature", "confidence": 0.81 }
+  },
+  "expected": { "fails": false }
+}

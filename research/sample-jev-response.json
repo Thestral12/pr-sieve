@@ -1,0 +1,16 @@
+{
+  "live_call": true,
+  "captured_at": "2026-09-18T16:17:06.414Z",
+  "ms": 354,
+  "model": "jev-1.13.0",
+  "usage": {
+    "input_tokens": 308,
+    "output_tokens": 20
+  },
+  "answers": {
+    "ping": {
+      "type": "noul",
+      "noul": 0.84
+    }
+  }
+}

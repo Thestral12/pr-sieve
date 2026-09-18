@@ -1,0 +1,25 @@
+# Copy to .github/workflows/pr-sieve.yml in the consuming repository.
+# Pin the action to a commit SHA, not a floating tag.
+name: pr-sieve
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+jobs:
+  sieve:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      checks: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      # Pin to a commit SHA from https://github.com/Thestral12/pr-sieve (not a floating tag).
+      - uses: Thestral12/pr-sieve@PIN_SHA_AFTER_PUSH
+        with:
+          typesafe-api-key: ${{ secrets.TYPESAFE_API_KEY }}
+          config: .jev.yml
+          fail-on: gate
+          comment: sticky

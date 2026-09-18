@@ -1,0 +1,30 @@
+{
+  "id": "weakens-tests",
+  "gold": true,
+  "layer": "jev",
+  "policy_yaml": "version: 1\nrules:\n  - id: weakens_tests\n    on: fail\n    threshold: 0.80\n    ask: \"This diff weakens or deletes tests rather than adding coverage for the behavior it changes.\"\n",
+  "dossier": {
+    "surface": "pr",
+    "title": "fix: flaky test",
+    "body": "Delete the assertion that was failing.",
+    "author_association": "CONTRIBUTOR",
+    "files": [{ "path": "src/app.test.ts", "status": "M", "additions": 0, "deletions": 12 }],
+    "path_tags": ["tests"],
+    "preflight": {
+      "secret_regex_hits": [],
+      "has_test_file_change": true,
+      "has_changelog_change": false,
+      "file_count": 1,
+      "truncated": false
+    },
+    "diff": "diff --git a/src/app.test.ts b/src/app.test.ts\n-expect(value).toEqual(expected);\n"
+  },
+  "answers": {
+    "looks_like_secret": { "type": "noul", "noul": 0.01 },
+    "missing_tests": { "type": "noul", "noul": 0.20 },
+    "changelog": { "type": "noul", "noul": 0.02 },
+    "weakens_tests": { "type": "noul", "noul": 0.91 },
+    "change_kind": { "type": "choice", "choice": "fix", "confidence": 0.70 }
+  },
+  "expected": { "fails": true, "finding_ids": ["weakens_tests"] }
+}

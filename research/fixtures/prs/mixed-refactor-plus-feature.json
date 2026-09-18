@@ -1,0 +1,31 @@
+{
+  "id": "mixed-refactor-plus-feature",
+  "gold": true,
+  "layer": "jev",
+  "dossier": {
+    "surface": "pr",
+    "title": "cleanup and add billing flag",
+    "body": "Rename helpers and add a billing feature flag.",
+    "author_association": "MEMBER",
+    "files": [
+      { "path": "src/util.ts", "status": "M", "additions": 20, "deletions": 20 },
+      { "path": "src/billing/flag.ts", "status": "A", "additions": 25, "deletions": 0 }
+    ],
+    "path_tags": [],
+    "preflight": {
+      "secret_regex_hits": [],
+      "has_test_file_change": false,
+      "has_changelog_change": false,
+      "file_count": 2,
+      "truncated": false
+    },
+    "diff": "diff --git a/src/billing/flag.ts b/src/billing/flag.ts\n+export const billing = true;\n"
+  },
+  "answers": {
+    "looks_like_secret": { "type": "noul", "noul": 0.01 },
+    "missing_tests": { "type": "noul", "noul": 0.40 },
+    "changelog": { "type": "noul", "noul": 0.35 },
+    "change_kind": { "type": "choice", "choice": "mixed", "confidence": 0.72 }
+  },
+  "expected": { "fails": false, "finding_ids": ["change_kind"] }
+}

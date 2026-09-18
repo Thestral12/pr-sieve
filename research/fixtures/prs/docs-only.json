@@ -1,0 +1,28 @@
+{
+  "id": "docs-only",
+  "gold": true,
+  "layer": "jev",
+  "dossier": {
+    "surface": "pr",
+    "title": "docs: fix typo",
+    "body": "",
+    "author_association": "MEMBER",
+    "files": [{ "path": "README.md", "status": "M", "additions": 1, "deletions": 1 }],
+    "path_tags": ["docs"],
+    "preflight": {
+      "secret_regex_hits": [],
+      "has_test_file_change": false,
+      "has_changelog_change": false,
+      "file_count": 1,
+      "truncated": false
+    },
+    "diff": "diff --git a/README.md b/README.md\n-teh\n+the\n"
+  },
+  "answers": {
+    "looks_like_secret": { "type": "noul", "noul": 0.01 },
+    "missing_tests": { "type": "noul", "noul": 0.03 },
+    "changelog": { "type": "noul", "noul": 0.04 },
+    "change_kind": { "type": "choice", "choice": "chore", "confidence": 0.91 }
+  },
+  "expected": { "fails": false }
+}

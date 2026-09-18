@@ -1,0 +1,28 @@
+{
+  "id": "skipped-paths",
+  "gold": true,
+  "layer": "rules",
+  "dossier": {
+    "surface": "pr",
+    "title": "fix: format helper",
+    "body": "",
+    "author_association": "MEMBER",
+    "files": [{ "path": "src/util/format.ts", "status": "M", "additions": 3, "deletions": 1 }],
+    "path_tags": [],
+    "preflight": {
+      "secret_regex_hits": [],
+      "has_test_file_change": false,
+      "has_changelog_change": false,
+      "file_count": 1,
+      "truncated": false
+    },
+    "diff": "diff --git a/src/util/format.ts b/src/util/format.ts\n+return s.trim();\n"
+  },
+  "answers": {
+    "looks_like_secret": { "type": "noul", "noul": 0.01 },
+    "missing_tests": { "type": "noul", "noul": 0.10 },
+    "changelog": { "type": "noul", "noul": 0.02 },
+    "change_kind": { "type": "choice", "choice": "fix", "confidence": 0.74 }
+  },
+  "expected": { "fails": false }
+}

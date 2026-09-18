@@ -1,0 +1,52 @@
+version: 1
+
+ignore_paths:
+  - "pnpm-lock.yaml"
+  - "**/*.snap"
+  - "dist/**"
+
+preflight:
+  max_files: 80
+  max_diff_chars: 12000
+  secret_regexes:
+    - "AKIA[0-9A-Z]{16}"
+    - "-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----"
+  test_path_globs:
+    - "**/*.{test,spec}.*"
+    - "**/__tests__/**"
+  changelog_paths:
+    - "CHANGELOG.md"
+    - "changelog.md"
+
+# Builtin defaults. touches_auth is a routing label, not a violation.
+builtin:
+  looks_like_secret:
+    on: fail
+    threshold: 0.85
+  missing_tests:
+    on: fail
+    threshold: 0.80
+  changelog:
+    on: comment
+    threshold: 0.70
+  touches_auth:
+    on: comment
+    threshold: 0.75
+    paths: ["**/auth/**", "**/*auth*.*", "**/middleware/**"]
+  change_kind:
+    on: comment
+
+rules:
+  - id: weakens_tests
+    on: fail
+    threshold: 0.80
+    ask: "This diff weakens or deletes tests rather than adding coverage for the behavior it changes."
+  - id: scope_creep
+    on: comment
+    threshold: 0.75
+    ask: "This PR mixes an unrelated refactor or extra feature into the stated title/body."
+  - id: claimed_refactor
+    on: fail
+    threshold: 0.80
+    title_matches: "(?i)refactor"
+    ask: "The title claims a refactor, but the diff changes an exported value, signature, or user-visible behavior. A new or changed exported literal is not a refactor."
