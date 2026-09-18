@@ -77,7 +77,7 @@ git rev-parse HEAD
 
 Put that SHA in `uses:`. Tags move; SHAs do not.
 
-## What we did not build
+## What this does not do
 
 Generated review comments, suggested patches, auto-approve / auto-merge, reviewer assignment via the reviews API, a dashboard, SARIF, GitLab, path-scoped markdown rule files, or a `workflow_run` privileged second job. Jev is not a secret scanner: regexes are. Jev asks whether a change *looks like* it handles secrets carelessly.
 
